@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #0c0f14;
+  --panel: #141a22;
+  --panel-2: #1a2230;
+  --line: #263041;
+  --text: #dde6ef;
+  --muted: #7d8a9c;
+  --signal: #5fe39b;
+  --amber: #f2b134;
+  --miss: #ff5d5d;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(transparent 0 0),
+    radial-gradient(800px 400px at 90% -5%, rgba(95, 227, 155, 0.08), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font-family: var(--sans);
+}
+
+/* --- Cabecera --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brand .logo {
+  width: 30px;
+  height: 30px;
+}
+.brand h1 {
+  font-size: 1.15rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.brand .sub {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.algo-switch {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+.algo-switch button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: 7px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.algo-switch button.active {
+  background: var(--signal);
+  color: #07140d;
+}
+
+/* --- Disposición --- */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+.panel h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+  font-weight: 700;
+}
+
+/* --- Editor de tareas --- */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+}
+.task-table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.72rem;
+  padding: 0 0.3rem 0.4rem;
+}
+.task-table td {
+  padding: 0.2rem 0.3rem;
+}
+.task-table input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 0.35rem 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.task-table input[type="number"] {
+  width: 52px;
+  text-align: center;
+}
+.task-table .name-input {
+  min-width: 70px;
+}
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.row-del {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.2rem;
+}
+.row-del:hover {
+  color: var(--miss);
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+.btn {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: var(--signal);
+}
+.btn-accent {
+  background: var(--signal);
+  color: #07140d;
+  border-color: var(--signal);
+}
+.presets {
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.presets button {
+  background: none;
+  border: none;
+  color: var(--signal);
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0;
+  margin-right: 0.7rem;
+  text-decoration: underline dotted;
+}
+
+/* --- Verdicto --- */
+.verdict {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.verdict.ok {
+  background: rgba(95, 227, 155, 0.12);
+  border: 1px solid rgba(95, 227, 155, 0.35);
+  color: var(--signal);
+}
+.verdict.fail {
+  background: rgba(255, 93, 93, 0.12);
+  border: 1px solid rgba(255, 93, 93, 0.35);
+  color: var(--miss);
+}
+.verdict .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* --- Métricas --- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+.metric {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+}
+.metric .k {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.metric .v {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+.metric .v small {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* --- Tabla de análisis --- */
+.rta {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.rta th,
+.rta td {
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.rta th {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+.tag-ok {
+  color: var(--signal);
+}
+.tag-fail {
+  color: var(--miss);
+}
+
+/* --- Gantt --- */
+.gantt-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+.gantt-legend {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.gantt-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.note {
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 0.8rem;
+  line-height: 1.5;
+}
+.note code {
+  font-family: var(--mono);
+  color: var(--text);
+}
