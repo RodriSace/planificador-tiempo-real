@@ -8,7 +8,7 @@
 ![React](https://img.shields.io/badge/react-18-61dafb)
 ![TypeScript](https://img.shields.io/badge/typescript-5-3178c6)
 
-🔗 **Demo:** `https://RodriSace.github.io/rt-scheduler-sim/`
+🔗 **Demo:** `https://rodrisace.github.io/planificador-tiempo-real/`
 _(sustituye `RodriSace` por tu usuario de GitHub aquí y en las insignias)._
 
 > 📸 Añade una captura en `docs/screenshot.png` y enlázala aquí — sube mucho la primera impresión del repo.
