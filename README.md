@@ -2,8 +2,8 @@
 
 > Simulador interactivo de **planificación de tiempo real**. Define tareas periódicas, elige el algoritmo (**RMS**, **DMS** o **EDF**) y observa el cronograma, los plazos y el análisis de planificabilidad en directo.
 
-![CI](https://github.com/RodriSace/rt-scheduler-sim/actions/workflows/ci.yml/badge.svg)
-![Pages](https://github.com/RodriSace/rt-scheduler-sim/actions/workflows/deploy.yml/badge.svg)
+![CI](https://github.com/RodriSace/planificador-tiempo-real/actions/workflows/ci.yml/badge.svg)
+![Pages](https://github.com/RodriSace/planificador-tiempo-real/actions/workflows/deploy.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![React](https://img.shields.io/badge/react-18-61dafb)
 ![TypeScript](https://img.shields.io/badge/typescript-5-3178c6)
